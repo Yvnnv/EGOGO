@@ -15,3 +15,6 @@ Site web de présentation pour Egogo, une application mobile qui aide les utilis
 - Tailwind CSS
 - Vite
 - Express
+git init
+git add .
+git commit -m "Premier commit"

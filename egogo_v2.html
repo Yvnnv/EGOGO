@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egogo - scanner, comparer, économiser</title>
+  <style>
+    :root {
+      --main-color: #4CAF50;
+      --light-color: #E8F5E9;
+      --text-color: #2E7D32;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: var(--text-color);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 0.5rem;
+    }
+
+    .branding h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .branding p {
+      margin: 0;
+      font-style: italic;
+    }
+
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* affichage fixe en 2 colonnes */
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .feature {
+      background-color: var(--light-color);
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .carousel {
+      max-width: 1000px;
+      margin: 2rem auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel img {
+      height: 400px;
+      margin-right: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .about, .contact {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact a {
+      color: var(--text-color);
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\USER\Downloads\egogo_site\LOGO V3.png" alt="Logo Egogo" />
+    <div class="branding">
+      <h1>Egogo</h1>
+      <p>Des économies à gogo</p>
+    </div>
+  </header>
+
+  <section class="features-container">
+    <div class="feature">
+      <h3>📸 Scan intelligent</h3>
+      <p>Scanne tes tickets de caisse et récupère automatiquement les articles.</p>
+    </div>
+    <div class="feature">
+      <h3>💸 Comparaison de prix</h3>
+      <p>Découvre où chaque produit est le moins cher autour de toi.</p>
+    </div>
+    <div class="feature">
+      <h3>🗺️ Carte interactive</h3>
+      <p>Repère les enseignes proches avec les meilleures offres.</p>
+    </div>
+    <div class="feature">
+      <h3>📊 Économies suivies</h3>
+      <p>Visualise l’argent que tu pourrais économiser sur chaque ticket.</p>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel-track" id="carouselTrack">
+       <img src="C:\Users\USER\Documents\site egogo\page d'accueil_egogo.png" alt="Accueil Egogo" />
+       <img src="C:\Users\USER\Documents\site egogo\page scan_egogo.png" alt="Résultat scan" />
+       <img src="C:\Users\USER\Documents\site egogo\gps_egogo.png" alt="trouvez le magasin le moins cher" />
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>À propos</h2>
+    <p>Egogo est une application conçue pour aider les consommateurs à faire des choix malins et économiser au quotidien. Ce projet est né de l’envie de rendre le pouvoir d’achat plus accessible à tous, simplement en scannant un ticket de caisse.</p>
+  </section>
+
+  <section class="contact">
+    <h2>📞 Contact</h2>
+    <p>Une question ou envie de collaborer ?</p>
+    <p>Écris-nous à : <a href="mailto:contact@egogo.app">contact@egogo.app</a></p>
+    <p>Ou appelle-nous au : <a href="tel:+33123456789">01 23 45 67 89</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Egogo. Tous droits réservés.</p>
+    <p>Contact : contact@egogo.app</p>
+  </footer>
+
+  <script>
+    const track = document.getElementById('carouselTrack');
+    let index = 0;
+
+    setInterval(() => {
+      index++;
+      if (index > 3) index = 0;
+      track.style.transform = `translateX(-${index * (track.children[0].offsetWidth + 16)}px)`;
+    }, 3000);
+  </script>
+</body>
+</html>
